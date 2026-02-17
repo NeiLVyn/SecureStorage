@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;net10.0-android;net10.0-ios;net10.0-maccatalyst;net10.0-windows</TargetFrameworks>
+    <RootNamespace>SecureStorage</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>SecureStorage</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>NeiLVyn</Authors>
+    <Description>Cross-platform secure storage library for Blazor WebApp and MAUI Blazor Hybrid applications. Provides unified interface for browser localStorage/sessionStorage and native secure storage.</Description>
+    <PackageTags>blazor;maui;storage;localstorage;securestorage;cross-platform</PackageTags>
+    <RepositoryUrl>https://github.com/NeiLVyn/SecureStorage</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net10.0'">
+    <PackageReference Include="Microsoft.Maui.Essentials" Version="10.0.0" />
+  </ItemGroup>
+</Project>
